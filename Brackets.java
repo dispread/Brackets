@@ -156,7 +156,7 @@ public class Brackets {
 				normal--;
 			}
 			if(c == ']') {
-				if(!square) {
+				if(!square || normal > 0) {
 					return false;
 				} else if(!vSquare) {
 					return false;
@@ -165,7 +165,7 @@ public class Brackets {
 				vSquare = false;
 			}
 			if(c == '}') {
-				if(!curly) {
+				if(!curly || square || normal > 0) {
 					return false;
 				} else if(!vCurly) {
 					return false;
